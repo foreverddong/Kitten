@@ -21,8 +21,9 @@ $RECYCLE.BIN/
 # Donglin Customized
 # =========================
 
-#match binary folders
-bin/
+#match binarys
+*.pdb
+*.exe
 
 
 
