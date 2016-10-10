@@ -235,7 +235,7 @@ namespace KittenInterpreter
                 memory.Add(name, value);
             }
 
-            return base.VisitDeclStatement(context);
+            return DNull();
         }
 
         public override DynObj VisitAssignStatement([NotNull] KittenGrammarParser.AssignStatementContext context)
