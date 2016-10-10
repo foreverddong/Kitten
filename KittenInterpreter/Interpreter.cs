@@ -347,7 +347,10 @@ namespace KittenInterpreter
             }
             return DNull();
         }
-
+        public override DynObj VisitParenExpr([NotNull] KittenGrammarParser.ParenExprContext context)
+        {
+            return Visit(context.expr());
+        }
         public override DynObj VisitUnaryBooleanExpr([NotNull] KittenGrammarParser.UnaryBooleanExprContext context)
         {
             var RHS = Visit(context.right);

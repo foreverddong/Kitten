@@ -1,5 +1,5 @@
 var a = number(input());
-if (a > 5 and a < 10)
+if (not (a > 5 and a < 10))
 {
 	print("match!");
 } else 
