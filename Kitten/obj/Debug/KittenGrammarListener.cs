@@ -215,6 +215,17 @@ public interface IKittenGrammarListener : IParseTreeListener {
 	void ExitIfStatement([NotNull] KittenGrammarParser.IfStatementContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="KittenGrammarParser.forStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterForStatement([NotNull] KittenGrammarParser.ForStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="KittenGrammarParser.forStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitForStatement([NotNull] KittenGrammarParser.ForStatementContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="KittenGrammarParser.statementList"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

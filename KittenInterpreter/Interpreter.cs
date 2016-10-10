@@ -297,13 +297,28 @@ namespace KittenInterpreter
             return result;
         }
 
+        public override DynObj VisitWhileStatement([NotNull] KittenGrammarParser.WhileStatementContext context)
+        {
+            var trueBlock = Visit(context.blockLiteral());
+            var cond = Visit(context.cond);
+            if (cond.t != vType.Bool)
+            {
+                ReportError("InvalidTypeError", $"expression \"{context.cond.GetText()}\" cannot be evaluated into bool.", context.start.Line);
+            }
+            while (Visit(context.cond).BoolVal == true)
+            {
+                Visit(trueBlock.FuncVal.IMP);
+            }
+            return DNull();
+        }
+
         public override DynObj VisitIfStatement([NotNull] KittenGrammarParser.IfStatementContext context)
         {
             var trueBlock = Visit(context.yes);
             var cond = Visit(context.cond);
             if (cond.t != vType.Bool)
             {
-                ReportError("InvalidTypeError", $"expression{context.cond.ToString()} cannot be evaluated into bool.", context.start.Line);
+                ReportError("InvalidTypeError", $"expression \"{context.cond.GetText()}\" cannot be evaluated into bool.", context.start.Line);
             }
             if (cond.BoolVal == true)
             {
@@ -312,6 +327,23 @@ namespace KittenInterpreter
             if (cond.BoolVal == false && context.no != null)
             {
                 Visit(Visit(context.no).FuncVal.IMP);
+            }
+            return DNull();
+        }
+
+        public override DynObj VisitForStatement([NotNull] KittenGrammarParser.ForStatementContext context)
+        {
+            Visit(context.begin);
+            var cond = Visit(context.cond);
+            if (cond.t != vType.Bool)
+            {
+                ReportError("InvalidTypeError", $"expression \"{context.cond.GetText()}\" cannot be evaluated into bool.", context.start.Line);
+            }
+            var imp = Visit(context.imp);
+            while (Visit(context.cond).BoolVal == true)
+            {
+                Visit(imp.FuncVal.IMP);
+                Visit(context.iter);
             }
             return DNull();
         }

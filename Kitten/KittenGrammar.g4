@@ -12,7 +12,7 @@ statement
 	| exprStatement
 	| whileStatement
 	| ifStatement
-	//| forStatement
+	| forStatement
 	;
 
 declStatement
@@ -33,6 +33,10 @@ whileStatement
 
 ifStatement
 	: 'if' '(' cond=expr ')' yes=blockLiteral('else' no=blockLiteral)?
+	;
+
+forStatement
+	: 'for' '(' begin=statement ';' cond=expr ';' iter=statement ')' imp=blockLiteral
 	;
 
 statementList

@@ -147,6 +147,13 @@ public interface IKittenGrammarVisitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitIfStatement([NotNull] KittenGrammarParser.IfStatementContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="KittenGrammarParser.forStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitForStatement([NotNull] KittenGrammarParser.ForStatementContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="KittenGrammarParser.statementList"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

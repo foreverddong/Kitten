@@ -249,6 +249,19 @@ public partial class KittenGrammarBaseListener : IKittenGrammarListener {
 	public virtual void ExitIfStatement([NotNull] KittenGrammarParser.IfStatementContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="KittenGrammarParser.forStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterForStatement([NotNull] KittenGrammarParser.ForStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="KittenGrammarParser.forStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitForStatement([NotNull] KittenGrammarParser.ForStatementContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="KittenGrammarParser.statementList"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
