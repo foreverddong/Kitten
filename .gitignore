@@ -22,7 +22,8 @@ $RECYCLE.BIN/
 # =========================
 
 #match binary folders
-**/bin
+Kitten/bin/
+KittenInterpreter/bin/
 
 
 
