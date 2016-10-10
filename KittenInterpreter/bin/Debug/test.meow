@@ -1,6 +1,8 @@
 var a = number(input());
-var i = 0;
-for (i = 0;i < a;i = i + 1)
+if (a > 5 and a < 10)
 {
-	print(i);
-}
+	print("match!");
+} else 
+{
+	print("not match!");
+};

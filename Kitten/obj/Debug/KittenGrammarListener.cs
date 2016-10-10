@@ -32,6 +32,19 @@ using IToken = Antlr4.Runtime.IToken;
 [System.CLSCompliant(false)]
 public interface IKittenGrammarListener : IParseTreeListener {
 	/// <summary>
+	/// Enter a parse tree produced by the <c>unaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterUnaryBooleanExpr([NotNull] KittenGrammarParser.UnaryBooleanExprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>unaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitUnaryBooleanExpr([NotNull] KittenGrammarParser.UnaryBooleanExprContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by the <c>integerLiteralExpr</c>
 	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
 	/// </summary>
@@ -121,6 +134,19 @@ public interface IKittenGrammarListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitArithmaticExpr([NotNull] KittenGrammarParser.ArithmaticExprContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>binaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBinaryBooleanExpr([NotNull] KittenGrammarParser.BinaryBooleanExprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>binaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBinaryBooleanExpr([NotNull] KittenGrammarParser.BinaryBooleanExprContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by the <c>parenExpr</c>

@@ -35,6 +35,18 @@ using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 [System.CLSCompliant(false)]
 public partial class KittenGrammarBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, IKittenGrammarVisitor<Result> {
 	/// <summary>
+	/// Visit a parse tree produced by the <c>unaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// <para>
+	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
+	/// on <paramref name="context"/>.
+	/// </para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	public virtual Result VisitUnaryBooleanExpr([NotNull] KittenGrammarParser.UnaryBooleanExprContext context) { return VisitChildren(context); }
+
+	/// <summary>
 	/// Visit a parse tree produced by the <c>integerLiteralExpr</c>
 	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
 	/// <para>
@@ -117,6 +129,18 @@ public partial class KittenGrammarBaseVisitor<Result> : AbstractParseTreeVisitor
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	public virtual Result VisitArithmaticExpr([NotNull] KittenGrammarParser.ArithmaticExprContext context) { return VisitChildren(context); }
+
+	/// <summary>
+	/// Visit a parse tree produced by the <c>binaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// <para>
+	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
+	/// on <paramref name="context"/>.
+	/// </para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	public virtual Result VisitBinaryBooleanExpr([NotNull] KittenGrammarParser.BinaryBooleanExprContext context) { return VisitChildren(context); }
 
 	/// <summary>
 	/// Visit a parse tree produced by the <c>parenExpr</c>

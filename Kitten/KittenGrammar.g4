@@ -56,7 +56,9 @@ expr
 	| '(' expr ')' #parenExpr
 	| left=expr op=('*' | '/') right=expr #arithmaticExpr
 	| left=expr op=('+' | '-') right=expr #arithmaticExpr
+	| op=('not'|'!') right=expr #unaryBooleanExpr
 	| left=expr op=('=='|'>='|'<='|'!='|'>'|'<') right=expr #booleanExpr
+	| left=expr op=('and'|'or'|'&&'|'||') right=expr #binaryBooleanExpr 
 	| ID '(' exprList ')' #functionCallExpr
 	| ID '(' ')' #functionCallExpr
 	;

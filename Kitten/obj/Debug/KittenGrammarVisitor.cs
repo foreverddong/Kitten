@@ -33,6 +33,14 @@ using IToken = Antlr4.Runtime.IToken;
 [System.CLSCompliant(false)]
 public interface IKittenGrammarVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <summary>
+	/// Visit a parse tree produced by the <c>unaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitUnaryBooleanExpr([NotNull] KittenGrammarParser.UnaryBooleanExprContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by the <c>integerLiteralExpr</c>
 	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
 	/// </summary>
@@ -87,6 +95,14 @@ public interface IKittenGrammarVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitArithmaticExpr([NotNull] KittenGrammarParser.ArithmaticExprContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by the <c>binaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBinaryBooleanExpr([NotNull] KittenGrammarParser.BinaryBooleanExprContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by the <c>parenExpr</c>

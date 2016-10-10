@@ -36,6 +36,21 @@ using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 [System.CLSCompliant(false)]
 public partial class KittenGrammarBaseListener : IKittenGrammarListener {
 	/// <summary>
+	/// Enter a parse tree produced by the <c>unaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterUnaryBooleanExpr([NotNull] KittenGrammarParser.UnaryBooleanExprContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>unaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitUnaryBooleanExpr([NotNull] KittenGrammarParser.UnaryBooleanExprContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by the <c>integerLiteralExpr</c>
 	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -139,6 +154,21 @@ public partial class KittenGrammarBaseListener : IKittenGrammarListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitArithmaticExpr([NotNull] KittenGrammarParser.ArithmaticExprContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>binaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterBinaryBooleanExpr([NotNull] KittenGrammarParser.BinaryBooleanExprContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>binaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitBinaryBooleanExpr([NotNull] KittenGrammarParser.BinaryBooleanExprContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by the <c>parenExpr</c>

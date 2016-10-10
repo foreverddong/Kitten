@@ -348,6 +348,33 @@ namespace KittenInterpreter
             return DNull();
         }
 
+        public override DynObj VisitUnaryBooleanExpr([NotNull] KittenGrammarParser.UnaryBooleanExprContext context)
+        {
+            var RHS = Visit(context.right);
+            if (RHS.t != vType.Bool)
+            {
+                ReportError("InvalidTypeError", $"RHS type {RHS.typeName} used on operator \"{context.op.Text}\"", context.start.Line);
+            }
+            return DBool(!RHS.BoolVal);
+        }
+        public override DynObj VisitBinaryBooleanExpr([NotNull] KittenGrammarParser.BinaryBooleanExprContext context)
+        {
+            var LHS = Visit(context.left);
+            var RHS = Visit(context.right);
+            var op = context.op.Text;
+            if (LHS.t != vType.Bool || RHS.t != vType.Bool)
+            {
+                ReportError("InvalidTypeError", $"LHS type {LHS.typeName} and RHS type {RHS.typeName} used on operator \"{op}\"", context.start.Line);
+            }
+            switch (op)
+            {
+                case "and": case "&&":
+                    return DBool(LHS.BoolVal && RHS.BoolVal);
+                case "or": case "||":
+                    return DBool(LHS.BoolVal || RHS.BoolVal);
+            }
+            return DNull();
+        }
         public override DynObj VisitArithmaticExpr([NotNull] KittenGrammarParser.ArithmaticExprContext context)
         {
             var LHS = Visit(context.left);
