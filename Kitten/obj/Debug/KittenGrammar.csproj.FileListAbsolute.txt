@@ -1,0 +1,14 @@
+c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\bin\Debug\Kitten.exe.config
+c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\bin\Debug\Kitten.exe
+c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\bin\Debug\Kitten.pdb
+c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\bin\Debug\Antlr4.Runtime.dll
+c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\bin\Debug\Antlr4.Runtime.xml
+c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\obj\Debug\KittenGrammarLexer.cs
+c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\obj\Debug\KittenGrammarParser.cs
+c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\obj\Debug\KittenGrammarListener.cs
+c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\obj\Debug\KittenGrammarBaseListener.cs
+c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\obj\Debug\KittenGrammarVisitor.cs
+c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\obj\Debug\KittenGrammarBaseVisitor.cs
+c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\obj\Debug\KittenGrammar.csproj.Antlr4GeneratedCodeFileListAbsolute.txt
+c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\obj\Debug\Kitten.exe
+c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\obj\Debug\Kitten.pdb

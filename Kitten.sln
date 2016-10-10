@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KittenGrammar", "Kitten\KittenGrammar.csproj", "{CC34DE55-C8B7-413B-8D6D-E511C9CC85B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KittenInterpreter", "KittenInterpreter\KittenInterpreter.csproj", "{95B97F37-53AF-4304-A09B-41F6D5FD041F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC34DE55-C8B7-413B-8D6D-E511C9CC85B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC34DE55-C8B7-413B-8D6D-E511C9CC85B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC34DE55-C8B7-413B-8D6D-E511C9CC85B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC34DE55-C8B7-413B-8D6D-E511C9CC85B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95B97F37-53AF-4304-A09B-41F6D5FD041F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95B97F37-53AF-4304-A09B-41F6D5FD041F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95B97F37-53AF-4304-A09B-41F6D5FD041F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95B97F37-53AF-4304-A09B-41F6D5FD041F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

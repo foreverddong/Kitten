@@ -1,0 +1,8 @@
+c:\Users\ddong\documents\visual studio 2015\Projects\Kitten\KittenInterpreter\bin\Debug\KittenInterpreter.exe.config
+c:\Users\ddong\documents\visual studio 2015\Projects\Kitten\KittenInterpreter\obj\Debug\KittenInterpreter.csprojResolveAssemblyReference.cache
+c:\Users\ddong\documents\visual studio 2015\Projects\Kitten\KittenInterpreter\bin\Debug\KittenInterpreter.exe
+c:\Users\ddong\documents\visual studio 2015\Projects\Kitten\KittenInterpreter\bin\Debug\KittenInterpreter.pdb
+c:\Users\ddong\documents\visual studio 2015\Projects\Kitten\KittenInterpreter\bin\Debug\Antlr4.Runtime.dll
+c:\Users\ddong\documents\visual studio 2015\Projects\Kitten\KittenInterpreter\bin\Debug\Antlr4.Runtime.xml
+c:\Users\ddong\documents\visual studio 2015\Projects\Kitten\KittenInterpreter\obj\Debug\KittenInterpreter.exe
+c:\Users\ddong\documents\visual studio 2015\Projects\Kitten\KittenInterpreter\obj\Debug\KittenInterpreter.pdb
