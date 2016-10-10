@@ -1,2 +1,13 @@
-var a = 7;
-var b = print("hello");
+var a = number(input());
+var b = number(input());
+if (a > b)
+{
+	print("a is larger!");
+} else {
+	if (a == b)
+	{
+		print("they are equal!");
+	} else {
+		print("b is larger!");
+	};
+};

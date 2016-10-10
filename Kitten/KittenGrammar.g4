@@ -10,6 +10,9 @@ statement
 	: declStatement
 	| assignStatement
 	| exprStatement
+	| whileStatement
+	| ifStatement
+	//| forStatement
 	;
 
 declStatement
@@ -22,6 +25,14 @@ assignStatement
 
 exprStatement
 	: expr
+	;
+
+whileStatement
+	: 'while' '(' cond=expr ')' blockLiteral
+	;
+
+ifStatement
+	: 'if' '(' cond=expr ')' yes=blockLiteral('else' no=blockLiteral)?
 	;
 
 statementList
@@ -45,6 +56,9 @@ expr
 	| ID '(' exprList ')' #functionCallExpr
 	| ID '(' ')' #functionCallExpr
 	;
+
+
+
 
 blockLiteral
 	:  ('[' identifierList '}')? '{' statementList '}'
@@ -74,5 +88,6 @@ ID : [a-zA-Z]+ ;
 WS
 	: ('\r'
 	| '\n'
-	| ' ') -> channel(HIDDEN)
+	| ' '
+	| '\t') -> channel(HIDDEN)
 	;

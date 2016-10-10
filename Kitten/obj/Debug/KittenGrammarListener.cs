@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\KittenGrammar.g4 by ANTLR 4.5.3
+// Generated from C:\Users\ddong\Documents\Visual Studio 2015\Projects\Kitten\Kitten\KittenGrammar.g4 by ANTLR 4.5.3
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -191,6 +191,28 @@ public interface IKittenGrammarListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitExprStatement([NotNull] KittenGrammarParser.ExprStatementContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="KittenGrammarParser.whileStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterWhileStatement([NotNull] KittenGrammarParser.WhileStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="KittenGrammarParser.whileStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitWhileStatement([NotNull] KittenGrammarParser.WhileStatementContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="KittenGrammarParser.ifStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterIfStatement([NotNull] KittenGrammarParser.IfStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="KittenGrammarParser.ifStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitIfStatement([NotNull] KittenGrammarParser.IfStatementContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="KittenGrammarParser.statementList"/>.

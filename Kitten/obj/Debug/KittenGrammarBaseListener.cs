@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\KittenGrammar.g4 by ANTLR 4.5.3
+// Generated from C:\Users\ddong\Documents\Visual Studio 2015\Projects\Kitten\Kitten\KittenGrammar.g4 by ANTLR 4.5.3
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -221,6 +221,32 @@ public partial class KittenGrammarBaseListener : IKittenGrammarListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitExprStatement([NotNull] KittenGrammarParser.ExprStatementContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="KittenGrammarParser.whileStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterWhileStatement([NotNull] KittenGrammarParser.WhileStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="KittenGrammarParser.whileStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitWhileStatement([NotNull] KittenGrammarParser.WhileStatementContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="KittenGrammarParser.ifStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterIfStatement([NotNull] KittenGrammarParser.IfStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="KittenGrammarParser.ifStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitIfStatement([NotNull] KittenGrammarParser.IfStatementContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="KittenGrammarParser.statementList"/>.

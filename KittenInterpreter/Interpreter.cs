@@ -297,6 +297,25 @@ namespace KittenInterpreter
             return result;
         }
 
+        public override DynObj VisitIfStatement([NotNull] KittenGrammarParser.IfStatementContext context)
+        {
+            var trueBlock = Visit(context.yes);
+            var cond = Visit(context.cond);
+            if (cond.t != vType.Bool)
+            {
+                ReportError("InvalidTypeError", $"expression{context.cond.ToString()} cannot be evaluated into bool.", context.start.Line);
+            }
+            if (cond.BoolVal == true)
+            {
+                Visit(trueBlock.FuncVal.IMP);
+            }
+            if (cond.BoolVal == false && context.no != null)
+            {
+                Visit(Visit(context.no).FuncVal.IMP);
+            }
+            return DNull();
+        }
+
         public override DynObj VisitArithmaticExpr([NotNull] KittenGrammarParser.ArithmaticExprContext context)
         {
             var LHS = Visit(context.left);
@@ -342,17 +361,17 @@ namespace KittenInterpreter
                     switch (op)
                     {
                         case "==":
-                            return DBool(RHS.NumberVal == LHS.NumberVal);
-                        case "!=":
-                            return DBool(RHS.NumberVal != LHS.NumberVal);
-                        case ">=":
-                            return DBool(RHS.NumberVal >= LHS.NumberVal);
-                        case "<=":
-                            return DBool(RHS.NumberVal <= LHS.NumberVal);
-                        case ">":
-                            return DBool(RHS.NumberVal > LHS.NumberVal);
-                        case "<":
-                            return DBool(RHS.NumberVal < LHS.NumberVal);
+                            return DBool(LHS.NumberVal == RHS.NumberVal);
+                        case "!=":       
+                            return DBool(LHS.NumberVal != RHS.NumberVal);
+                        case ">=":       
+                            return DBool(LHS.NumberVal >= RHS.NumberVal);
+                        case "<=":       
+                            return DBool(LHS.NumberVal <= RHS.NumberVal);
+                        case ">":        
+                            return DBool(LHS.NumberVal > RHS.NumberVal);
+                        case "<":        
+                            return DBool(LHS.NumberVal < RHS.NumberVal);
                     }
                 }
                 if (LHS.t == vType.Bool)
