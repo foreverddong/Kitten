@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\KittenGrammar.g4 by ANTLR 4.5.3
+// Generated from C:\Users\ddong\Documents\Visual Studio 2015\Projects\Kitten\Kitten\KittenGrammar.g4 by ANTLR 4.5.3
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -35,6 +35,21 @@ using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.5.3")]
 [System.CLSCompliant(false)]
 public partial class KittenGrammarBaseListener : IKittenGrammarListener {
+	/// <summary>
+	/// Enter a parse tree produced by the <c>unaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterUnaryBooleanExpr([NotNull] KittenGrammarParser.UnaryBooleanExprContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>unaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitUnaryBooleanExpr([NotNull] KittenGrammarParser.UnaryBooleanExprContext context) { }
+
 	/// <summary>
 	/// Enter a parse tree produced by the <c>integerLiteralExpr</c>
 	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
@@ -141,6 +156,21 @@ public partial class KittenGrammarBaseListener : IKittenGrammarListener {
 	public virtual void ExitArithmaticExpr([NotNull] KittenGrammarParser.ArithmaticExprContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by the <c>binaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterBinaryBooleanExpr([NotNull] KittenGrammarParser.BinaryBooleanExprContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>binaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitBinaryBooleanExpr([NotNull] KittenGrammarParser.BinaryBooleanExprContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by the <c>parenExpr</c>
 	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -221,6 +251,45 @@ public partial class KittenGrammarBaseListener : IKittenGrammarListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitExprStatement([NotNull] KittenGrammarParser.ExprStatementContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="KittenGrammarParser.whileStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterWhileStatement([NotNull] KittenGrammarParser.WhileStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="KittenGrammarParser.whileStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitWhileStatement([NotNull] KittenGrammarParser.WhileStatementContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="KittenGrammarParser.ifStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterIfStatement([NotNull] KittenGrammarParser.IfStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="KittenGrammarParser.ifStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitIfStatement([NotNull] KittenGrammarParser.IfStatementContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="KittenGrammarParser.forStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterForStatement([NotNull] KittenGrammarParser.ForStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="KittenGrammarParser.forStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitForStatement([NotNull] KittenGrammarParser.ForStatementContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="KittenGrammarParser.statementList"/>.

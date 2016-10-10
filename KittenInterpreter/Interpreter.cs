@@ -235,7 +235,7 @@ namespace KittenInterpreter
                 memory.Add(name, value);
             }
 
-            return base.VisitDeclStatement(context);
+            return DNull();
         }
 
         public override DynObj VisitAssignStatement([NotNull] KittenGrammarParser.AssignStatementContext context)
@@ -297,6 +297,87 @@ namespace KittenInterpreter
             return result;
         }
 
+        public override DynObj VisitWhileStatement([NotNull] KittenGrammarParser.WhileStatementContext context)
+        {
+            var trueBlock = Visit(context.blockLiteral());
+            var cond = Visit(context.cond);
+            if (cond.t != vType.Bool)
+            {
+                ReportError("InvalidTypeError", $"expression \"{context.cond.GetText()}\" cannot be evaluated into bool.", context.start.Line);
+            }
+            while (Visit(context.cond).BoolVal == true)
+            {
+                Visit(trueBlock.FuncVal.IMP);
+            }
+            return DNull();
+        }
+
+        public override DynObj VisitIfStatement([NotNull] KittenGrammarParser.IfStatementContext context)
+        {
+            var trueBlock = Visit(context.yes);
+            var cond = Visit(context.cond);
+            if (cond.t != vType.Bool)
+            {
+                ReportError("InvalidTypeError", $"expression \"{context.cond.GetText()}\" cannot be evaluated into bool.", context.start.Line);
+            }
+            if (cond.BoolVal == true)
+            {
+                Visit(trueBlock.FuncVal.IMP);
+            }
+            if (cond.BoolVal == false && context.no != null)
+            {
+                Visit(Visit(context.no).FuncVal.IMP);
+            }
+            return DNull();
+        }
+
+        public override DynObj VisitForStatement([NotNull] KittenGrammarParser.ForStatementContext context)
+        {
+            Visit(context.begin);
+            var cond = Visit(context.cond);
+            if (cond.t != vType.Bool)
+            {
+                ReportError("InvalidTypeError", $"expression \"{context.cond.GetText()}\" cannot be evaluated into bool.", context.start.Line);
+            }
+            var imp = Visit(context.imp);
+            while (Visit(context.cond).BoolVal == true)
+            {
+                Visit(imp.FuncVal.IMP);
+                Visit(context.iter);
+            }
+            return DNull();
+        }
+        public override DynObj VisitParenExpr([NotNull] KittenGrammarParser.ParenExprContext context)
+        {
+            return Visit(context.expr());
+        }
+        public override DynObj VisitUnaryBooleanExpr([NotNull] KittenGrammarParser.UnaryBooleanExprContext context)
+        {
+            var RHS = Visit(context.right);
+            if (RHS.t != vType.Bool)
+            {
+                ReportError("InvalidTypeError", $"RHS type {RHS.typeName} used on operator \"{context.op.Text}\"", context.start.Line);
+            }
+            return DBool(!RHS.BoolVal);
+        }
+        public override DynObj VisitBinaryBooleanExpr([NotNull] KittenGrammarParser.BinaryBooleanExprContext context)
+        {
+            var LHS = Visit(context.left);
+            var RHS = Visit(context.right);
+            var op = context.op.Text;
+            if (LHS.t != vType.Bool || RHS.t != vType.Bool)
+            {
+                ReportError("InvalidTypeError", $"LHS type {LHS.typeName} and RHS type {RHS.typeName} used on operator \"{op}\"", context.start.Line);
+            }
+            switch (op)
+            {
+                case "and": case "&&":
+                    return DBool(LHS.BoolVal && RHS.BoolVal);
+                case "or": case "||":
+                    return DBool(LHS.BoolVal || RHS.BoolVal);
+            }
+            return DNull();
+        }
         public override DynObj VisitArithmaticExpr([NotNull] KittenGrammarParser.ArithmaticExprContext context)
         {
             var LHS = Visit(context.left);
@@ -342,17 +423,17 @@ namespace KittenInterpreter
                     switch (op)
                     {
                         case "==":
-                            return DBool(RHS.NumberVal == LHS.NumberVal);
-                        case "!=":
-                            return DBool(RHS.NumberVal != LHS.NumberVal);
-                        case ">=":
-                            return DBool(RHS.NumberVal >= LHS.NumberVal);
-                        case "<=":
-                            return DBool(RHS.NumberVal <= LHS.NumberVal);
-                        case ">":
-                            return DBool(RHS.NumberVal > LHS.NumberVal);
-                        case "<":
-                            return DBool(RHS.NumberVal < LHS.NumberVal);
+                            return DBool(LHS.NumberVal == RHS.NumberVal);
+                        case "!=":       
+                            return DBool(LHS.NumberVal != RHS.NumberVal);
+                        case ">=":       
+                            return DBool(LHS.NumberVal >= RHS.NumberVal);
+                        case "<=":       
+                            return DBool(LHS.NumberVal <= RHS.NumberVal);
+                        case ">":        
+                            return DBool(LHS.NumberVal > RHS.NumberVal);
+                        case "<":        
+                            return DBool(LHS.NumberVal < RHS.NumberVal);
                     }
                 }
                 if (LHS.t == vType.Bool)

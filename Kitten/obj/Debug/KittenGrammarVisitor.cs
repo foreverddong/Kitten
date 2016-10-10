@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\KittenGrammar.g4 by ANTLR 4.5.3
+// Generated from C:\Users\ddong\Documents\Visual Studio 2015\Projects\Kitten\Kitten\KittenGrammar.g4 by ANTLR 4.5.3
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -32,6 +32,14 @@ using IToken = Antlr4.Runtime.IToken;
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.5.3")]
 [System.CLSCompliant(false)]
 public interface IKittenGrammarVisitor<Result> : IParseTreeVisitor<Result> {
+	/// <summary>
+	/// Visit a parse tree produced by the <c>unaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitUnaryBooleanExpr([NotNull] KittenGrammarParser.UnaryBooleanExprContext context);
+
 	/// <summary>
 	/// Visit a parse tree produced by the <c>integerLiteralExpr</c>
 	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
@@ -89,6 +97,14 @@ public interface IKittenGrammarVisitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitArithmaticExpr([NotNull] KittenGrammarParser.ArithmaticExprContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by the <c>binaryBooleanExpr</c>
+	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBinaryBooleanExpr([NotNull] KittenGrammarParser.BinaryBooleanExprContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by the <c>parenExpr</c>
 	/// labeled alternative in <see cref="KittenGrammarParser.expr"/>.
 	/// </summary>
@@ -131,6 +147,27 @@ public interface IKittenGrammarVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitExprStatement([NotNull] KittenGrammarParser.ExprStatementContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="KittenGrammarParser.whileStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitWhileStatement([NotNull] KittenGrammarParser.WhileStatementContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="KittenGrammarParser.ifStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitIfStatement([NotNull] KittenGrammarParser.IfStatementContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="KittenGrammarParser.forStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitForStatement([NotNull] KittenGrammarParser.ForStatementContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="KittenGrammarParser.statementList"/>.

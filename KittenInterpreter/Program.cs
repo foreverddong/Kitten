@@ -12,7 +12,7 @@ namespace KittenInterpreter
     {
         static void Main(string[] args)
         {
-            var inpt = new Interpreter(".\\test.meow");
+            var inpt = new Interpreter("test.meow");
             inpt.Start();
             Console.ReadKey();
         }
