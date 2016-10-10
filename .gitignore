@@ -18,6 +18,15 @@ $RECYCLE.BIN/
 *.lnk
 
 # =========================
+# Donglin Customized
+# =========================
+
+#match binary folders
+**/bin
+
+
+
+# =========================
 # Operating System Files
 # =========================
 
