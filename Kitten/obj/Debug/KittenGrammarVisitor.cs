@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:\Users\ddong\Documents\Visual Studio 2015\Projects\Kitten\Kitten\KittenGrammar.g4 by ANTLR 4.5.3
+// Generated from C:\Users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\KittenGrammar.g4 by ANTLR 4.5.3
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -168,6 +168,13 @@ public interface IKittenGrammarVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitForStatement([NotNull] KittenGrammarParser.ForStatementContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="KittenGrammarParser.returnStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitReturnStatement([NotNull] KittenGrammarParser.ReturnStatementContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="KittenGrammarParser.statementList"/>.

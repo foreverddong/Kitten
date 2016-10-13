@@ -1,8 +1,21 @@
-var a = number(input());
-if (not (a > 5 and a < 10))
+var isPrime = [num]{
+	var flag = false;
+	for (var i = 2; i < num;i = i + 1)
+	{
+		if (num % i == 0)
+		{
+			flag = true;
+		};
+	};
+	if (flag == false)
+	{
+		println(num);
+	};
+};
+
+var i = 0;
+println(2);
+for (i = 3;i <= 100;i = i + 1)
 {
-	print("match!");
-} else 
-{
-	print("not match!");
+	isPrime(i);
 };

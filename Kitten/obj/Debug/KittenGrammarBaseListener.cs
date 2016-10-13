@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:\Users\ddong\Documents\Visual Studio 2015\Projects\Kitten\Kitten\KittenGrammar.g4 by ANTLR 4.5.3
+// Generated from C:\Users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\KittenGrammar.g4 by ANTLR 4.5.3
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -290,6 +290,19 @@ public partial class KittenGrammarBaseListener : IKittenGrammarListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitForStatement([NotNull] KittenGrammarParser.ForStatementContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="KittenGrammarParser.returnStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterReturnStatement([NotNull] KittenGrammarParser.ReturnStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="KittenGrammarParser.returnStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitReturnStatement([NotNull] KittenGrammarParser.ReturnStatementContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="KittenGrammarParser.statementList"/>.

@@ -12,3 +12,4 @@ c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\obj\Debug\Kit
 c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\obj\Debug\KittenGrammar.csproj.Antlr4GeneratedCodeFileListAbsolute.txt
 c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\obj\Debug\Kitten.exe
 c:\users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\obj\Debug\Kitten.pdb
+C:\Users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\obj\Debug\KittenGrammar.csprojResolveAssemblyReference.cache

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:\Users\ddong\Documents\Visual Studio 2015\Projects\Kitten\Kitten\KittenGrammar.g4 by ANTLR 4.5.3
+// Generated from C:\Users\ddong\documents\visual studio 2015\Projects\Kitten\Kitten\KittenGrammar.g4 by ANTLR 4.5.3
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -34,30 +34,32 @@ public partial class KittenGrammarParser : Parser {
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
 		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, T__23=24, 
-		T__24=25, T__25=26, T__26=27, T__27=28, T__28=29, IntegerLiteral=30, BooleanLiteral=31, 
-		StringLiteral=32, ID=33, WS=34;
+		T__24=25, T__25=26, T__26=27, T__27=28, T__28=29, T__29=30, T__30=31, 
+		T__31=32, IntegerLiteral=33, BooleanLiteral=34, StringLiteral=35, ID=36, 
+		WS=37;
 	public const int
 		RULE_statement = 0, RULE_declStatement = 1, RULE_assignStatement = 2, 
 		RULE_exprStatement = 3, RULE_whileStatement = 4, RULE_ifStatement = 5, 
-		RULE_forStatement = 6, RULE_statementList = 7, RULE_identifierList = 8, 
-		RULE_expr = 9, RULE_blockLiteral = 10, RULE_exprList = 11, RULE_compileUnit = 12;
+		RULE_forStatement = 6, RULE_returnStatement = 7, RULE_statementList = 8, 
+		RULE_identifierList = 9, RULE_expr = 10, RULE_blockLiteral = 11, RULE_exprList = 12, 
+		RULE_compileUnit = 13;
 	public static readonly string[] ruleNames = {
 		"statement", "declStatement", "assignStatement", "exprStatement", "whileStatement", 
-		"ifStatement", "forStatement", "statementList", "identifierList", "expr", 
-		"blockLiteral", "exprList", "compileUnit"
+		"ifStatement", "forStatement", "returnStatement", "statementList", "identifierList", 
+		"expr", "blockLiteral", "exprList", "compileUnit"
 	};
 
 	private static readonly string[] _LiteralNames = {
 		null, "'var'", "'='", "'while'", "'('", "')'", "'if'", "'else'", "'for'", 
-		"';'", "'*'", "'/'", "'+'", "'-'", "'not'", "'!'", "'=='", "'>='", "'<='", 
-		"'!='", "'>'", "'<'", "'and'", "'or'", "'&&'", "'||'", "'['", "'}'", "'{'", 
-		"','"
+		"';'", "'return'", "'*'", "'/'", "'%'", "'+'", "'-'", "'not'", "'!'", 
+		"'=='", "'>='", "'<='", "'!='", "'>'", "'<'", "'and'", "'or'", "'&&'", 
+		"'||'", "'['", "']'", "'{'", "'}'", "','"
 	};
 	private static readonly string[] _SymbolicNames = {
 		null, null, null, null, null, null, null, null, null, null, null, null, 
 		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, "IntegerLiteral", "BooleanLiteral", 
-		"StringLiteral", "ID", "WS"
+		null, null, null, null, null, null, null, null, null, "IntegerLiteral", 
+		"BooleanLiteral", "StringLiteral", "ID", "WS"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -128,6 +130,9 @@ public partial class KittenGrammarParser : Parser {
 		public ForStatementContext forStatement() {
 			return GetRuleContext<ForStatementContext>(0);
 		}
+		public ReturnStatementContext returnStatement() {
+			return GetRuleContext<ReturnStatementContext>(0);
+		}
 		public StatementContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
@@ -153,48 +158,55 @@ public partial class KittenGrammarParser : Parser {
 		StatementContext _localctx = new StatementContext(_ctx, State);
 		EnterRule(_localctx, 0, RULE_statement);
 		try {
-			State = 32;
+			State = 35;
 			_errHandler.Sync(this);
 			switch ( Interpreter.AdaptivePredict(_input,0,_ctx) ) {
 			case 1:
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 26; declStatement();
+				State = 28; declStatement();
 				}
 				break;
 
 			case 2:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 27; assignStatement();
+				State = 29; assignStatement();
 				}
 				break;
 
 			case 3:
 				EnterOuterAlt(_localctx, 3);
 				{
-				State = 28; exprStatement();
+				State = 30; exprStatement();
 				}
 				break;
 
 			case 4:
 				EnterOuterAlt(_localctx, 4);
 				{
-				State = 29; whileStatement();
+				State = 31; whileStatement();
 				}
 				break;
 
 			case 5:
 				EnterOuterAlt(_localctx, 5);
 				{
-				State = 30; ifStatement();
+				State = 32; ifStatement();
 				}
 				break;
 
 			case 6:
 				EnterOuterAlt(_localctx, 6);
 				{
-				State = 31; forStatement();
+				State = 33; forStatement();
+				}
+				break;
+
+			case 7:
+				EnterOuterAlt(_localctx, 7);
+				{
+				State = 34; returnStatement();
 				}
 				break;
 			}
@@ -242,10 +254,10 @@ public partial class KittenGrammarParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 34; Match(T__0);
-			State = 35; Match(ID);
-			State = 36; Match(T__1);
-			State = 37; expr(0);
+			State = 37; Match(T__0);
+			State = 38; Match(ID);
+			State = 39; Match(T__1);
+			State = 40; expr(0);
 			}
 		}
 		catch (RecognitionException re) {
@@ -291,9 +303,9 @@ public partial class KittenGrammarParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 39; Match(ID);
-			State = 40; Match(T__1);
-			State = 41; expr(0);
+			State = 42; Match(ID);
+			State = 43; Match(T__1);
+			State = 44; expr(0);
 			}
 		}
 		catch (RecognitionException re) {
@@ -338,7 +350,7 @@ public partial class KittenGrammarParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 43; expr(0);
+			State = 46; expr(0);
 			}
 		}
 		catch (RecognitionException re) {
@@ -387,11 +399,11 @@ public partial class KittenGrammarParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 45; Match(T__2);
-			State = 46; Match(T__3);
-			State = 47; _localctx.cond = expr(0);
-			State = 48; Match(T__4);
-			State = 49; blockLiteral();
+			State = 48; Match(T__2);
+			State = 49; Match(T__3);
+			State = 50; _localctx.cond = expr(0);
+			State = 51; Match(T__4);
+			State = 52; blockLiteral();
 			}
 		}
 		catch (RecognitionException re) {
@@ -446,17 +458,17 @@ public partial class KittenGrammarParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 51; Match(T__5);
-			State = 52; Match(T__3);
-			State = 53; _localctx.cond = expr(0);
-			State = 54; Match(T__4);
-			State = 55; _localctx.yes = blockLiteral();
-			State = 58;
+			State = 54; Match(T__5);
+			State = 55; Match(T__3);
+			State = 56; _localctx.cond = expr(0);
+			State = 57; Match(T__4);
+			State = 58; _localctx.yes = blockLiteral();
+			State = 61;
 			_la = _input.La(1);
 			if (_la==T__6) {
 				{
-				State = 56; Match(T__6);
-				State = 57; _localctx.no = blockLiteral();
+				State = 59; Match(T__6);
+				State = 60; _localctx.no = blockLiteral();
 				}
 			}
 
@@ -517,15 +529,61 @@ public partial class KittenGrammarParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 60; Match(T__7);
-			State = 61; Match(T__3);
-			State = 62; _localctx.begin = statement();
-			State = 63; Match(T__8);
-			State = 64; _localctx.cond = expr(0);
-			State = 65; Match(T__8);
-			State = 66; _localctx.iter = statement();
-			State = 67; Match(T__4);
-			State = 68; _localctx.imp = blockLiteral();
+			State = 63; Match(T__7);
+			State = 64; Match(T__3);
+			State = 65; _localctx.begin = statement();
+			State = 66; Match(T__8);
+			State = 67; _localctx.cond = expr(0);
+			State = 68; Match(T__8);
+			State = 69; _localctx.iter = statement();
+			State = 70; Match(T__4);
+			State = 71; _localctx.imp = blockLiteral();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.ReportError(this, re);
+			_errHandler.Recover(this, re);
+		}
+		finally {
+			ExitRule();
+		}
+		return _localctx;
+	}
+
+	public partial class ReturnStatementContext : ParserRuleContext {
+		public ExprContext expr() {
+			return GetRuleContext<ExprContext>(0);
+		}
+		public ReturnStatementContext(ParserRuleContext parent, int invokingState)
+			: base(parent, invokingState)
+		{
+		}
+		public override int RuleIndex { get { return RULE_returnStatement; } }
+		public override void EnterRule(IParseTreeListener listener) {
+			IKittenGrammarListener typedListener = listener as IKittenGrammarListener;
+			if (typedListener != null) typedListener.EnterReturnStatement(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IKittenGrammarListener typedListener = listener as IKittenGrammarListener;
+			if (typedListener != null) typedListener.ExitReturnStatement(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IKittenGrammarVisitor<TResult> typedVisitor = visitor as IKittenGrammarVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitReturnStatement(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+
+	[RuleVersion(0)]
+	public ReturnStatementContext returnStatement() {
+		ReturnStatementContext _localctx = new ReturnStatementContext(_ctx, State);
+		EnterRule(_localctx, 14, RULE_returnStatement);
+		try {
+			EnterOuterAlt(_localctx, 1);
+			{
+			State = 73; Match(T__9);
+			State = 74; expr(0);
 			}
 		}
 		catch (RecognitionException re) {
@@ -569,22 +627,22 @@ public partial class KittenGrammarParser : Parser {
 	[RuleVersion(0)]
 	public StatementListContext statementList() {
 		StatementListContext _localctx = new StatementListContext(_ctx, State);
-		EnterRule(_localctx, 14, RULE_statementList);
+		EnterRule(_localctx, 16, RULE_statementList);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 75;
+			State = 81;
 			_errHandler.Sync(this);
 			_la = _input.La(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__2) | (1L << T__3) | (1L << T__5) | (1L << T__7) | (1L << T__13) | (1L << T__14) | (1L << T__25) | (1L << T__27) | (1L << IntegerLiteral) | (1L << BooleanLiteral) | (1L << StringLiteral) | (1L << ID))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__2) | (1L << T__3) | (1L << T__5) | (1L << T__7) | (1L << T__9) | (1L << T__15) | (1L << T__16) | (1L << T__27) | (1L << T__29) | (1L << IntegerLiteral) | (1L << BooleanLiteral) | (1L << StringLiteral) | (1L << ID))) != 0)) {
 				{
 				{
-				State = 70; statement();
-				State = 71; Match(T__8);
+				State = 76; statement();
+				State = 77; Match(T__8);
 				}
 				}
-				State = 77;
+				State = 83;
 				_errHandler.Sync(this);
 				_la = _input.La(1);
 			}
@@ -629,21 +687,21 @@ public partial class KittenGrammarParser : Parser {
 	[RuleVersion(0)]
 	public IdentifierListContext identifierList() {
 		IdentifierListContext _localctx = new IdentifierListContext(_ctx, State);
-		EnterRule(_localctx, 16, RULE_identifierList);
+		EnterRule(_localctx, 18, RULE_identifierList);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 81;
+			State = 87;
 			_errHandler.Sync(this);
 			_la = _input.La(1);
 			while (_la==ID) {
 				{
 				{
-				State = 78; Match(ID);
+				State = 84; Match(ID);
 				}
 				}
-				State = 83;
+				State = 89;
 				_errHandler.Sync(this);
 				_la = _input.La(1);
 			}
@@ -905,14 +963,14 @@ public partial class KittenGrammarParser : Parser {
 		int _parentState = State;
 		ExprContext _localctx = new ExprContext(_ctx, _parentState);
 		ExprContext _prevctx = _localctx;
-		int _startState = 18;
-		EnterRecursionRule(_localctx, 18, RULE_expr, _p);
+		int _startState = 20;
+		EnterRecursionRule(_localctx, 20, RULE_expr, _p);
 		int _la;
 		try {
 			int _alt;
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 104;
+			State = 110;
 			_errHandler.Sync(this);
 			switch ( Interpreter.AdaptivePredict(_input,4,_ctx) ) {
 			case 1:
@@ -921,7 +979,7 @@ public partial class KittenGrammarParser : Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
-				State = 85; Match(ID);
+				State = 91; Match(ID);
 				}
 				break;
 
@@ -930,7 +988,7 @@ public partial class KittenGrammarParser : Parser {
 				_localctx = new IntegerLiteralExprContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				State = 86; Match(IntegerLiteral);
+				State = 92; Match(IntegerLiteral);
 				}
 				break;
 
@@ -939,7 +997,7 @@ public partial class KittenGrammarParser : Parser {
 				_localctx = new StringLiteralExprContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				State = 87; Match(StringLiteral);
+				State = 93; Match(StringLiteral);
 				}
 				break;
 
@@ -948,7 +1006,7 @@ public partial class KittenGrammarParser : Parser {
 				_localctx = new BooleanLiteralExprContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				State = 88; Match(BooleanLiteral);
+				State = 94; Match(BooleanLiteral);
 				}
 				break;
 
@@ -957,7 +1015,7 @@ public partial class KittenGrammarParser : Parser {
 				_localctx = new BlockExprContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				State = 89; blockLiteral();
+				State = 95; blockLiteral();
 				}
 				break;
 
@@ -966,9 +1024,9 @@ public partial class KittenGrammarParser : Parser {
 				_localctx = new ParenExprContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				State = 90; Match(T__3);
-				State = 91; expr(0);
-				State = 92; Match(T__4);
+				State = 96; Match(T__3);
+				State = 97; expr(0);
+				State = 98; Match(T__4);
 				}
 				break;
 
@@ -977,15 +1035,15 @@ public partial class KittenGrammarParser : Parser {
 				_localctx = new UnaryBooleanExprContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				State = 94;
+				State = 100;
 				((UnaryBooleanExprContext)_localctx).op = _input.Lt(1);
 				_la = _input.La(1);
-				if ( !(_la==T__13 || _la==T__14) ) {
+				if ( !(_la==T__15 || _la==T__16) ) {
 					((UnaryBooleanExprContext)_localctx).op = _errHandler.RecoverInline(this);
 				} else {
 					Consume();
 				}
-				State = 95; ((UnaryBooleanExprContext)_localctx).right = expr(5);
+				State = 101; ((UnaryBooleanExprContext)_localctx).right = expr(5);
 				}
 				break;
 
@@ -994,10 +1052,10 @@ public partial class KittenGrammarParser : Parser {
 				_localctx = new FunctionCallExprContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				State = 96; Match(ID);
-				State = 97; Match(T__3);
-				State = 98; exprList();
-				State = 99; Match(T__4);
+				State = 102; Match(ID);
+				State = 103; Match(T__3);
+				State = 104; exprList();
+				State = 105; Match(T__4);
 				}
 				break;
 
@@ -1006,14 +1064,14 @@ public partial class KittenGrammarParser : Parser {
 				_localctx = new FunctionCallExprContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				State = 101; Match(ID);
-				State = 102; Match(T__3);
-				State = 103; Match(T__4);
+				State = 107; Match(ID);
+				State = 108; Match(T__3);
+				State = 109; Match(T__4);
 				}
 				break;
 			}
 			_ctx.stop = _input.Lt(-1);
-			State = 120;
+			State = 126;
 			_errHandler.Sync(this);
 			_alt = Interpreter.AdaptivePredict(_input,6,_ctx);
 			while ( _alt!=2 && _alt!=global::Antlr4.Runtime.Atn.ATN.InvalidAltNumber ) {
@@ -1021,7 +1079,7 @@ public partial class KittenGrammarParser : Parser {
 					if ( _parseListeners!=null ) TriggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					State = 118;
+					State = 124;
 					_errHandler.Sync(this);
 					switch ( Interpreter.AdaptivePredict(_input,5,_ctx) ) {
 					case 1:
@@ -1029,17 +1087,17 @@ public partial class KittenGrammarParser : Parser {
 						_localctx = new ArithmaticExprContext(new ExprContext(_parentctx, _parentState));
 						((ArithmaticExprContext)_localctx).left = _prevctx;
 						PushNewRecursionContext(_localctx, _startState, RULE_expr);
-						State = 106;
+						State = 112;
 						if (!(Precpred(_ctx, 7))) throw new FailedPredicateException(this, "Precpred(_ctx, 7)");
-						State = 107;
+						State = 113;
 						((ArithmaticExprContext)_localctx).op = _input.Lt(1);
 						_la = _input.La(1);
-						if ( !(_la==T__9 || _la==T__10) ) {
+						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__10) | (1L << T__11) | (1L << T__12))) != 0)) ) {
 							((ArithmaticExprContext)_localctx).op = _errHandler.RecoverInline(this);
 						} else {
 							Consume();
 						}
-						State = 108; ((ArithmaticExprContext)_localctx).right = expr(8);
+						State = 114; ((ArithmaticExprContext)_localctx).right = expr(8);
 						}
 						break;
 
@@ -1048,17 +1106,17 @@ public partial class KittenGrammarParser : Parser {
 						_localctx = new ArithmaticExprContext(new ExprContext(_parentctx, _parentState));
 						((ArithmaticExprContext)_localctx).left = _prevctx;
 						PushNewRecursionContext(_localctx, _startState, RULE_expr);
-						State = 109;
+						State = 115;
 						if (!(Precpred(_ctx, 6))) throw new FailedPredicateException(this, "Precpred(_ctx, 6)");
-						State = 110;
+						State = 116;
 						((ArithmaticExprContext)_localctx).op = _input.Lt(1);
 						_la = _input.La(1);
-						if ( !(_la==T__11 || _la==T__12) ) {
+						if ( !(_la==T__13 || _la==T__14) ) {
 							((ArithmaticExprContext)_localctx).op = _errHandler.RecoverInline(this);
 						} else {
 							Consume();
 						}
-						State = 111; ((ArithmaticExprContext)_localctx).right = expr(7);
+						State = 117; ((ArithmaticExprContext)_localctx).right = expr(7);
 						}
 						break;
 
@@ -1067,17 +1125,17 @@ public partial class KittenGrammarParser : Parser {
 						_localctx = new BooleanExprContext(new ExprContext(_parentctx, _parentState));
 						((BooleanExprContext)_localctx).left = _prevctx;
 						PushNewRecursionContext(_localctx, _startState, RULE_expr);
-						State = 112;
+						State = 118;
 						if (!(Precpred(_ctx, 4))) throw new FailedPredicateException(this, "Precpred(_ctx, 4)");
-						State = 113;
+						State = 119;
 						((BooleanExprContext)_localctx).op = _input.Lt(1);
 						_la = _input.La(1);
-						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__15) | (1L << T__16) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20))) != 0)) ) {
+						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22))) != 0)) ) {
 							((BooleanExprContext)_localctx).op = _errHandler.RecoverInline(this);
 						} else {
 							Consume();
 						}
-						State = 114; ((BooleanExprContext)_localctx).right = expr(5);
+						State = 120; ((BooleanExprContext)_localctx).right = expr(5);
 						}
 						break;
 
@@ -1086,23 +1144,23 @@ public partial class KittenGrammarParser : Parser {
 						_localctx = new BinaryBooleanExprContext(new ExprContext(_parentctx, _parentState));
 						((BinaryBooleanExprContext)_localctx).left = _prevctx;
 						PushNewRecursionContext(_localctx, _startState, RULE_expr);
-						State = 115;
+						State = 121;
 						if (!(Precpred(_ctx, 3))) throw new FailedPredicateException(this, "Precpred(_ctx, 3)");
-						State = 116;
+						State = 122;
 						((BinaryBooleanExprContext)_localctx).op = _input.Lt(1);
 						_la = _input.La(1);
-						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24))) != 0)) ) {
+						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26))) != 0)) ) {
 							((BinaryBooleanExprContext)_localctx).op = _errHandler.RecoverInline(this);
 						} else {
 							Consume();
 						}
-						State = 117; ((BinaryBooleanExprContext)_localctx).right = expr(4);
+						State = 123; ((BinaryBooleanExprContext)_localctx).right = expr(4);
 						}
 						break;
 					}
 					} 
 				}
-				State = 122;
+				State = 128;
 				_errHandler.Sync(this);
 				_alt = Interpreter.AdaptivePredict(_input,6,_ctx);
 			}
@@ -1149,24 +1207,24 @@ public partial class KittenGrammarParser : Parser {
 	[RuleVersion(0)]
 	public BlockLiteralContext blockLiteral() {
 		BlockLiteralContext _localctx = new BlockLiteralContext(_ctx, State);
-		EnterRule(_localctx, 20, RULE_blockLiteral);
+		EnterRule(_localctx, 22, RULE_blockLiteral);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 127;
+			State = 133;
 			_la = _input.La(1);
-			if (_la==T__25) {
+			if (_la==T__27) {
 				{
-				State = 123; Match(T__25);
-				State = 124; identifierList();
-				State = 125; Match(T__26);
+				State = 129; Match(T__27);
+				State = 130; identifierList();
+				State = 131; Match(T__28);
 				}
 			}
 
-			State = 129; Match(T__27);
-			State = 130; statementList();
-			State = 131; Match(T__26);
+			State = 135; Match(T__29);
+			State = 136; statementList();
+			State = 137; Match(T__30);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1210,23 +1268,23 @@ public partial class KittenGrammarParser : Parser {
 	[RuleVersion(0)]
 	public ExprListContext exprList() {
 		ExprListContext _localctx = new ExprListContext(_ctx, State);
-		EnterRule(_localctx, 22, RULE_exprList);
+		EnterRule(_localctx, 24, RULE_exprList);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 133; expr(0);
-			State = 138;
+			State = 139; expr(0);
+			State = 144;
 			_errHandler.Sync(this);
 			_la = _input.La(1);
-			while (_la==T__28) {
+			while (_la==T__31) {
 				{
 				{
-				State = 134; Match(T__28);
-				State = 135; expr(0);
+				State = 140; Match(T__31);
+				State = 141; expr(0);
 				}
 				}
-				State = 140;
+				State = 146;
 				_errHandler.Sync(this);
 				_la = _input.La(1);
 			}
@@ -1271,12 +1329,12 @@ public partial class KittenGrammarParser : Parser {
 	[RuleVersion(0)]
 	public CompileUnitContext compileUnit() {
 		CompileUnitContext _localctx = new CompileUnitContext(_ctx, State);
-		EnterRule(_localctx, 24, RULE_compileUnit);
+		EnterRule(_localctx, 26, RULE_compileUnit);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 141; statementList();
-			State = 142; Match(Eof);
+			State = 147; statementList();
+			State = 148; Match(Eof);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1292,7 +1350,7 @@ public partial class KittenGrammarParser : Parser {
 
 	public override bool Sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
 		switch (ruleIndex) {
-		case 9: return expr_sempred((ExprContext)_localctx, predIndex);
+		case 10: return expr_sempred((ExprContext)_localctx, predIndex);
 		}
 		return true;
 	}
@@ -1310,55 +1368,58 @@ public partial class KittenGrammarParser : Parser {
 	}
 
 	public static readonly string _serializedATN =
-		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3$\x93\x4\x2\t\x2"+
+		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\'\x99\x4\x2\t\x2"+
 		"\x4\x3\t\x3\x4\x4\t\x4\x4\x5\t\x5\x4\x6\t\x6\x4\a\t\a\x4\b\t\b\x4\t\t"+
-		"\t\x4\n\t\n\x4\v\t\v\x4\f\t\f\x4\r\t\r\x4\xE\t\xE\x3\x2\x3\x2\x3\x2\x3"+
-		"\x2\x3\x2\x3\x2\x5\x2#\n\x2\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x4\x3\x4"+
-		"\x3\x4\x3\x4\x3\x5\x3\x5\x3\x6\x3\x6\x3\x6\x3\x6\x3\x6\x3\x6\x3\a\x3\a"+
-		"\x3\a\x3\a\x3\a\x3\a\x3\a\x5\a=\n\a\x3\b\x3\b\x3\b\x3\b\x3\b\x3\b\x3\b"+
-		"\x3\b\x3\b\x3\b\x3\t\x3\t\x3\t\a\tL\n\t\f\t\xE\tO\v\t\x3\n\a\nR\n\n\f"+
-		"\n\xE\nU\v\n\x3\v\x3\v\x3\v\x3\v\x3\v\x3\v\x3\v\x3\v\x3\v\x3\v\x3\v\x3"+
-		"\v\x3\v\x3\v\x3\v\x3\v\x3\v\x3\v\x3\v\x3\v\x5\vk\n\v\x3\v\x3\v\x3\v\x3"+
-		"\v\x3\v\x3\v\x3\v\x3\v\x3\v\x3\v\x3\v\x3\v\a\vy\n\v\f\v\xE\v|\v\v\x3\f"+
-		"\x3\f\x3\f\x3\f\x5\f\x82\n\f\x3\f\x3\f\x3\f\x3\f\x3\r\x3\r\x3\r\a\r\x8B"+
-		"\n\r\f\r\xE\r\x8E\v\r\x3\xE\x3\xE\x3\xE\x3\xE\x2\x2\x3\x14\xF\x2\x2\x4"+
-		"\x2\x6\x2\b\x2\n\x2\f\x2\xE\x2\x10\x2\x12\x2\x14\x2\x16\x2\x18\x2\x1A"+
-		"\x2\x2\a\x3\x2\x10\x11\x3\x2\f\r\x3\x2\xE\xF\x3\x2\x12\x17\x3\x2\x18\x1B"+
-		"\x9B\x2\"\x3\x2\x2\x2\x4$\x3\x2\x2\x2\x6)\x3\x2\x2\x2\b-\x3\x2\x2\x2\n"+
-		"/\x3\x2\x2\x2\f\x35\x3\x2\x2\x2\xE>\x3\x2\x2\x2\x10M\x3\x2\x2\x2\x12S"+
-		"\x3\x2\x2\x2\x14j\x3\x2\x2\x2\x16\x81\x3\x2\x2\x2\x18\x87\x3\x2\x2\x2"+
-		"\x1A\x8F\x3\x2\x2\x2\x1C#\x5\x4\x3\x2\x1D#\x5\x6\x4\x2\x1E#\x5\b\x5\x2"+
-		"\x1F#\x5\n\x6\x2 #\x5\f\a\x2!#\x5\xE\b\x2\"\x1C\x3\x2\x2\x2\"\x1D\x3\x2"+
-		"\x2\x2\"\x1E\x3\x2\x2\x2\"\x1F\x3\x2\x2\x2\" \x3\x2\x2\x2\"!\x3\x2\x2"+
-		"\x2#\x3\x3\x2\x2\x2$%\a\x3\x2\x2%&\a#\x2\x2&\'\a\x4\x2\x2\'(\x5\x14\v"+
-		"\x2(\x5\x3\x2\x2\x2)*\a#\x2\x2*+\a\x4\x2\x2+,\x5\x14\v\x2,\a\x3\x2\x2"+
-		"\x2-.\x5\x14\v\x2.\t\x3\x2\x2\x2/\x30\a\x5\x2\x2\x30\x31\a\x6\x2\x2\x31"+
-		"\x32\x5\x14\v\x2\x32\x33\a\a\x2\x2\x33\x34\x5\x16\f\x2\x34\v\x3\x2\x2"+
-		"\x2\x35\x36\a\b\x2\x2\x36\x37\a\x6\x2\x2\x37\x38\x5\x14\v\x2\x38\x39\a"+
-		"\a\x2\x2\x39<\x5\x16\f\x2:;\a\t\x2\x2;=\x5\x16\f\x2<:\x3\x2\x2\x2<=\x3"+
-		"\x2\x2\x2=\r\x3\x2\x2\x2>?\a\n\x2\x2?@\a\x6\x2\x2@\x41\x5\x2\x2\x2\x41"+
-		"\x42\a\v\x2\x2\x42\x43\x5\x14\v\x2\x43\x44\a\v\x2\x2\x44\x45\x5\x2\x2"+
-		"\x2\x45\x46\a\a\x2\x2\x46G\x5\x16\f\x2G\xF\x3\x2\x2\x2HI\x5\x2\x2\x2I"+
-		"J\a\v\x2\x2JL\x3\x2\x2\x2KH\x3\x2\x2\x2LO\x3\x2\x2\x2MK\x3\x2\x2\x2MN"+
-		"\x3\x2\x2\x2N\x11\x3\x2\x2\x2OM\x3\x2\x2\x2PR\a#\x2\x2QP\x3\x2\x2\x2R"+
-		"U\x3\x2\x2\x2SQ\x3\x2\x2\x2ST\x3\x2\x2\x2T\x13\x3\x2\x2\x2US\x3\x2\x2"+
-		"\x2VW\b\v\x1\x2Wk\a#\x2\x2Xk\a \x2\x2Yk\a\"\x2\x2Zk\a!\x2\x2[k\x5\x16"+
-		"\f\x2\\]\a\x6\x2\x2]^\x5\x14\v\x2^_\a\a\x2\x2_k\x3\x2\x2\x2`\x61\t\x2"+
-		"\x2\x2\x61k\x5\x14\v\a\x62\x63\a#\x2\x2\x63\x64\a\x6\x2\x2\x64\x65\x5"+
-		"\x18\r\x2\x65\x66\a\a\x2\x2\x66k\x3\x2\x2\x2gh\a#\x2\x2hi\a\x6\x2\x2i"+
-		"k\a\a\x2\x2jV\x3\x2\x2\x2jX\x3\x2\x2\x2jY\x3\x2\x2\x2jZ\x3\x2\x2\x2j["+
-		"\x3\x2\x2\x2j\\\x3\x2\x2\x2j`\x3\x2\x2\x2j\x62\x3\x2\x2\x2jg\x3\x2\x2"+
-		"\x2kz\x3\x2\x2\x2lm\f\t\x2\x2mn\t\x3\x2\x2ny\x5\x14\v\nop\f\b\x2\x2pq"+
-		"\t\x4\x2\x2qy\x5\x14\v\trs\f\x6\x2\x2st\t\x5\x2\x2ty\x5\x14\v\auv\f\x5"+
-		"\x2\x2vw\t\x6\x2\x2wy\x5\x14\v\x6xl\x3\x2\x2\x2xo\x3\x2\x2\x2xr\x3\x2"+
-		"\x2\x2xu\x3\x2\x2\x2y|\x3\x2\x2\x2zx\x3\x2\x2\x2z{\x3\x2\x2\x2{\x15\x3"+
-		"\x2\x2\x2|z\x3\x2\x2\x2}~\a\x1C\x2\x2~\x7F\x5\x12\n\x2\x7F\x80\a\x1D\x2"+
-		"\x2\x80\x82\x3\x2\x2\x2\x81}\x3\x2\x2\x2\x81\x82\x3\x2\x2\x2\x82\x83\x3"+
-		"\x2\x2\x2\x83\x84\a\x1E\x2\x2\x84\x85\x5\x10\t\x2\x85\x86\a\x1D\x2\x2"+
-		"\x86\x17\x3\x2\x2\x2\x87\x8C\x5\x14\v\x2\x88\x89\a\x1F\x2\x2\x89\x8B\x5"+
-		"\x14\v\x2\x8A\x88\x3\x2\x2\x2\x8B\x8E\x3\x2\x2\x2\x8C\x8A\x3\x2\x2\x2"+
-		"\x8C\x8D\x3\x2\x2\x2\x8D\x19\x3\x2\x2\x2\x8E\x8C\x3\x2\x2\x2\x8F\x90\x5"+
-		"\x10\t\x2\x90\x91\a\x2\x2\x3\x91\x1B\x3\x2\x2\x2\v\"<MSjxz\x81\x8C";
+		"\t\x4\n\t\n\x4\v\t\v\x4\f\t\f\x4\r\t\r\x4\xE\t\xE\x4\xF\t\xF\x3\x2\x3"+
+		"\x2\x3\x2\x3\x2\x3\x2\x3\x2\x3\x2\x5\x2&\n\x2\x3\x3\x3\x3\x3\x3\x3\x3"+
+		"\x3\x3\x3\x4\x3\x4\x3\x4\x3\x4\x3\x5\x3\x5\x3\x6\x3\x6\x3\x6\x3\x6\x3"+
+		"\x6\x3\x6\x3\a\x3\a\x3\a\x3\a\x3\a\x3\a\x3\a\x5\a@\n\a\x3\b\x3\b\x3\b"+
+		"\x3\b\x3\b\x3\b\x3\b\x3\b\x3\b\x3\b\x3\t\x3\t\x3\t\x3\n\x3\n\x3\n\a\n"+
+		"R\n\n\f\n\xE\nU\v\n\x3\v\a\vX\n\v\f\v\xE\v[\v\v\x3\f\x3\f\x3\f\x3\f\x3"+
+		"\f\x3\f\x3\f\x3\f\x3\f\x3\f\x3\f\x3\f\x3\f\x3\f\x3\f\x3\f\x3\f\x3\f\x3"+
+		"\f\x3\f\x5\fq\n\f\x3\f\x3\f\x3\f\x3\f\x3\f\x3\f\x3\f\x3\f\x3\f\x3\f\x3"+
+		"\f\x3\f\a\f\x7F\n\f\f\f\xE\f\x82\v\f\x3\r\x3\r\x3\r\x3\r\x5\r\x88\n\r"+
+		"\x3\r\x3\r\x3\r\x3\r\x3\xE\x3\xE\x3\xE\a\xE\x91\n\xE\f\xE\xE\xE\x94\v"+
+		"\xE\x3\xF\x3\xF\x3\xF\x3\xF\x2\x2\x3\x16\x10\x2\x2\x4\x2\x6\x2\b\x2\n"+
+		"\x2\f\x2\xE\x2\x10\x2\x12\x2\x14\x2\x16\x2\x18\x2\x1A\x2\x1C\x2\x2\a\x3"+
+		"\x2\x12\x13\x3\x2\r\xF\x3\x2\x10\x11\x3\x2\x14\x19\x3\x2\x1A\x1D\xA1\x2"+
+		"%\x3\x2\x2\x2\x4\'\x3\x2\x2\x2\x6,\x3\x2\x2\x2\b\x30\x3\x2\x2\x2\n\x32"+
+		"\x3\x2\x2\x2\f\x38\x3\x2\x2\x2\xE\x41\x3\x2\x2\x2\x10K\x3\x2\x2\x2\x12"+
+		"S\x3\x2\x2\x2\x14Y\x3\x2\x2\x2\x16p\x3\x2\x2\x2\x18\x87\x3\x2\x2\x2\x1A"+
+		"\x8D\x3\x2\x2\x2\x1C\x95\x3\x2\x2\x2\x1E&\x5\x4\x3\x2\x1F&\x5\x6\x4\x2"+
+		" &\x5\b\x5\x2!&\x5\n\x6\x2\"&\x5\f\a\x2#&\x5\xE\b\x2$&\x5\x10\t\x2%\x1E"+
+		"\x3\x2\x2\x2%\x1F\x3\x2\x2\x2% \x3\x2\x2\x2%!\x3\x2\x2\x2%\"\x3\x2\x2"+
+		"\x2%#\x3\x2\x2\x2%$\x3\x2\x2\x2&\x3\x3\x2\x2\x2\'(\a\x3\x2\x2()\a&\x2"+
+		"\x2)*\a\x4\x2\x2*+\x5\x16\f\x2+\x5\x3\x2\x2\x2,-\a&\x2\x2-.\a\x4\x2\x2"+
+		"./\x5\x16\f\x2/\a\x3\x2\x2\x2\x30\x31\x5\x16\f\x2\x31\t\x3\x2\x2\x2\x32"+
+		"\x33\a\x5\x2\x2\x33\x34\a\x6\x2\x2\x34\x35\x5\x16\f\x2\x35\x36\a\a\x2"+
+		"\x2\x36\x37\x5\x18\r\x2\x37\v\x3\x2\x2\x2\x38\x39\a\b\x2\x2\x39:\a\x6"+
+		"\x2\x2:;\x5\x16\f\x2;<\a\a\x2\x2<?\x5\x18\r\x2=>\a\t\x2\x2>@\x5\x18\r"+
+		"\x2?=\x3\x2\x2\x2?@\x3\x2\x2\x2@\r\x3\x2\x2\x2\x41\x42\a\n\x2\x2\x42\x43"+
+		"\a\x6\x2\x2\x43\x44\x5\x2\x2\x2\x44\x45\a\v\x2\x2\x45\x46\x5\x16\f\x2"+
+		"\x46G\a\v\x2\x2GH\x5\x2\x2\x2HI\a\a\x2\x2IJ\x5\x18\r\x2J\xF\x3\x2\x2\x2"+
+		"KL\a\f\x2\x2LM\x5\x16\f\x2M\x11\x3\x2\x2\x2NO\x5\x2\x2\x2OP\a\v\x2\x2"+
+		"PR\x3\x2\x2\x2QN\x3\x2\x2\x2RU\x3\x2\x2\x2SQ\x3\x2\x2\x2ST\x3\x2\x2\x2"+
+		"T\x13\x3\x2\x2\x2US\x3\x2\x2\x2VX\a&\x2\x2WV\x3\x2\x2\x2X[\x3\x2\x2\x2"+
+		"YW\x3\x2\x2\x2YZ\x3\x2\x2\x2Z\x15\x3\x2\x2\x2[Y\x3\x2\x2\x2\\]\b\f\x1"+
+		"\x2]q\a&\x2\x2^q\a#\x2\x2_q\a%\x2\x2`q\a$\x2\x2\x61q\x5\x18\r\x2\x62\x63"+
+		"\a\x6\x2\x2\x63\x64\x5\x16\f\x2\x64\x65\a\a\x2\x2\x65q\x3\x2\x2\x2\x66"+
+		"g\t\x2\x2\x2gq\x5\x16\f\ahi\a&\x2\x2ij\a\x6\x2\x2jk\x5\x1A\xE\x2kl\a\a"+
+		"\x2\x2lq\x3\x2\x2\x2mn\a&\x2\x2no\a\x6\x2\x2oq\a\a\x2\x2p\\\x3\x2\x2\x2"+
+		"p^\x3\x2\x2\x2p_\x3\x2\x2\x2p`\x3\x2\x2\x2p\x61\x3\x2\x2\x2p\x62\x3\x2"+
+		"\x2\x2p\x66\x3\x2\x2\x2ph\x3\x2\x2\x2pm\x3\x2\x2\x2q\x80\x3\x2\x2\x2r"+
+		"s\f\t\x2\x2st\t\x3\x2\x2t\x7F\x5\x16\f\nuv\f\b\x2\x2vw\t\x4\x2\x2w\x7F"+
+		"\x5\x16\f\txy\f\x6\x2\x2yz\t\x5\x2\x2z\x7F\x5\x16\f\a{|\f\x5\x2\x2|}\t"+
+		"\x6\x2\x2}\x7F\x5\x16\f\x6~r\x3\x2\x2\x2~u\x3\x2\x2\x2~x\x3\x2\x2\x2~"+
+		"{\x3\x2\x2\x2\x7F\x82\x3\x2\x2\x2\x80~\x3\x2\x2\x2\x80\x81\x3\x2\x2\x2"+
+		"\x81\x17\x3\x2\x2\x2\x82\x80\x3\x2\x2\x2\x83\x84\a\x1E\x2\x2\x84\x85\x5"+
+		"\x14\v\x2\x85\x86\a\x1F\x2\x2\x86\x88\x3\x2\x2\x2\x87\x83\x3\x2\x2\x2"+
+		"\x87\x88\x3\x2\x2\x2\x88\x89\x3\x2\x2\x2\x89\x8A\a \x2\x2\x8A\x8B\x5\x12"+
+		"\n\x2\x8B\x8C\a!\x2\x2\x8C\x19\x3\x2\x2\x2\x8D\x92\x5\x16\f\x2\x8E\x8F"+
+		"\a\"\x2\x2\x8F\x91\x5\x16\f\x2\x90\x8E\x3\x2\x2\x2\x91\x94\x3\x2\x2\x2"+
+		"\x92\x90\x3\x2\x2\x2\x92\x93\x3\x2\x2\x2\x93\x1B\x3\x2\x2\x2\x94\x92\x3"+
+		"\x2\x2\x2\x95\x96\x5\x12\n\x2\x96\x97\a\x2\x2\x3\x97\x1D\x3\x2\x2\x2\v"+
+		"%?SYp~\x80\x87\x92";
 	public static readonly ATN _ATN =
 		new ATNDeserializer().Deserialize(_serializedATN.ToCharArray());
 }

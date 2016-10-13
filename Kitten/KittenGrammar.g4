@@ -13,6 +13,7 @@ statement
 	| whileStatement
 	| ifStatement
 	| forStatement
+	| returnStatement
 	;
 
 declStatement
@@ -39,6 +40,10 @@ forStatement
 	: 'for' '(' begin=statement ';' cond=expr ';' iter=statement ')' imp=blockLiteral
 	;
 
+returnStatement
+	: 'return' expr
+	;
+
 statementList
 	: (statement ';')*
 	;
@@ -54,7 +59,7 @@ expr
 	| BooleanLiteral #booleanLiteralExpr
 	| blockLiteral #blockExpr
 	| '(' expr ')' #parenExpr
-	| left=expr op=('*' | '/') right=expr #arithmaticExpr
+	| left=expr op=('*' | '/' | '%') right=expr #arithmaticExpr
 	| left=expr op=('+' | '-') right=expr #arithmaticExpr
 	| op=('not'|'!') right=expr #unaryBooleanExpr
 	| left=expr op=('=='|'>='|'<='|'!='|'>'|'<') right=expr #booleanExpr
@@ -67,7 +72,7 @@ expr
 
 
 blockLiteral
-	:  ('[' identifierList '}')? '{' statementList '}'
+	:  ('[' identifierList ']')? '{' statementList '}'
 	;
 
 exprList

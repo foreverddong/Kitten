@@ -209,10 +209,10 @@ namespace KittenInterpreter
         public Func<List<DynObj>, DynObj> BuiltinIMP;
         public KittenGrammarParser.StatementListContext IMP;
     }
-
     class KittenVisitor : KittenGrammarBaseVisitor<DynObj>
     {
         public static Dictionary<string, DynObj> globalMemory =  new Dictionary<string, DynObj>();
+        public static Stack<DynObj> callStack = new Stack<DynObj>;
         public Dictionary<string, DynObj> memory;
         public KittenVisitor(Dictionary<string,DynObj> mem)
         {
@@ -253,6 +253,11 @@ namespace KittenInterpreter
             return base.VisitAssignStatement(context);
         }
 
+        public override DynObj VisitReturnStatement([NotNull] KittenGrammarParser.ReturnStatementContext context)
+        {
+            callStack.Push(Visit(context.expr()));
+            return DNull();
+        }
         public override DynObj VisitIdentifierExpr([NotNull] KittenGrammarParser.IdentifierExprContext context)
         {
             var name = context.ID().Symbol.Text;
@@ -274,7 +279,7 @@ namespace KittenInterpreter
 
         public override DynObj VisitStringLiteralExpr([NotNull] KittenGrammarParser.StringLiteralExprContext context)
         {
-            return DString(context.StringLiteral().Symbol.Text);
+            return DString(context.StringLiteral().Symbol.Text.Substring(1, context.StringLiteral().Symbol.Text.Length - 2));
         }
 
         public override DynObj VisitBooleanLiteralExpr([NotNull] KittenGrammarParser.BooleanLiteralExprContext context)
@@ -395,6 +400,9 @@ namespace KittenInterpreter
                         return DNumber(LHS.NumberVal * RHS.NumberVal);
                     case "/":
                         return DNumber(LHS.NumberVal / RHS.NumberVal);
+                    case "%":
+                        // return DNumber(LHS.NumberVal - Math.Floor(LHS.NumberVal / RHS.NumberVal) * RHS.NumberVal);
+                        return DNumber((double)((int)LHS.NumberVal % (int)RHS.NumberVal));
                 }
             }
             else if (LHS.t == vType.String && RHS.t == vType.String)
@@ -511,7 +519,17 @@ namespace KittenInterpreter
                     contextMem.Add(paraList[i], valueList[i]);
                 }
                 var funcVisitor = new KittenVisitor(contextMem);
-                return funcVisitor.Visit(memory[name].FuncVal.IMP);
+                int before = callStack.Count;
+                funcVisitor.Visit(memory[name].FuncVal.IMP);
+                int after = callStack.Count;
+                if (before != after)
+                {
+                    return callStack.Pop();
+                }
+                else
+                {
+                    return DNull();
+                }
             }
             if (memory[name].FuncVal.t == function.funcType.Builtin)
             {
